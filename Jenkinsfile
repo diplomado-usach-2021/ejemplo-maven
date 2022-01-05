@@ -10,13 +10,13 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Test Code'
-                sh './mvnw.cmd clean test -e'
+                sh './mvnw clean test -e'
             }
         }
         stage('Jar') {
             steps {
                 echo 'Jar Code'
-                sh './mvnw.cmd clean package -e'
+                sh './mvnw clean package -e'
             }
         }
     }
