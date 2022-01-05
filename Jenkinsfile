@@ -19,5 +19,11 @@ pipeline {
                 sh './mvnw clean package -e'
             }
         }
+        stage('Run') {
+            steps {
+                echo 'Running'
+                sh './mvnw spring-boot:run'
+            }
+        }        
     }
 }
