@@ -24,6 +24,16 @@ pipeline {
         //        echo 'Running'
         //        sh './mvnw spring-boot:run'
         //    }
-        //}        
+        //}
+        stage('SonarQube analysis') {
+            steps {
+                script{
+                    def scannerHome = tool 'SonarScanner 4.0';
+                    withSonarQubeEnv('sq') {
+                        sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=SonarQube-S7M3"
+                    }
+                }
+            }
+        }        
     }
 }
