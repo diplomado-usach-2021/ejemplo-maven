@@ -28,7 +28,7 @@ pipeline {
         stage('SonarQube analysis') {
             steps {
                 script{
-                    def scannerHome = tool 'SonarScanner';
+                    def scannerHome = tool 'sq-local';
                     withSonarQubeEnv('sq') {
                         sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=SonarQube-S7M3"
                     }
