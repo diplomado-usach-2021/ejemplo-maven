@@ -30,7 +30,7 @@ pipeline {
                 script{
                     def scannerHome = tool 'sq-local';
                     withSonarQubeEnv('sq') {
-                        sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=SonarQube-S7M3"
+                        sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=SonarQube-S7M3 -Dsonar.java.binaries=."
                     }
                 }
             }
